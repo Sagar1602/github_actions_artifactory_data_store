@@ -49,6 +49,6 @@ jobs:
         with:
           name: dist-file
       - name: output content of artifact
-        run: echo "Deploying: ${{ needs.build.outputs.script-file }}"~
+        run: echo "Deploying: ${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
