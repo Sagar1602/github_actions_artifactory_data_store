@@ -29,7 +29,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: Publish Js Filename
-        id: Publish
+        id: publish
         run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: Storing Artifacts
         uses: actions/upload-artifact@v4
@@ -49,6 +49,6 @@ jobs:
         with:
           name: dist-file
       - name: output content of artifact
-        run: echo "Retriving: ${{ needs.build.outputs.script-file }}"
+        run: echo "Deploying: ${{ needs.build.outputs.script-file }}"~
       - name: Deploy
         run: echo "Deploying..."
